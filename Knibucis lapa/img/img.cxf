@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collage version="2" format="1:1" orientation="landscape" theme="picturepile" shadows="0" captions="0" albumUID="4444f03100a15acab8585e5c85cce43f">
+ <albumTitle>img</albumTitle>
+ <albumDate>August 2020</albumDate>
+ <background type="solid" color="FFFFFFFF"/>
+ <spacing value="0.000000"/>
+ <node x="0.007880" y="-0.235982" w="0.965011" h="0.465585" theta="6.283185" scale="988.171326">
+  <theme>noborder</theme>
+  <src>$Desktop\cv lapa\img\19.JPG</src>
+  <uid>0e67343fb007996a0000000000000000</uid>
+ </node>
+ <node x="0.009200" y="0.232005" w="0.974210" h="0.473409" theta="6.283185" scale="997.591370">
+  <theme>noborder</theme>
+  <src>$Desktop\cv lapa\img\91.JPG</src>
+  <uid>6fd271a95578e3a60000000000000000</uid>
+ </node>
+</collage>

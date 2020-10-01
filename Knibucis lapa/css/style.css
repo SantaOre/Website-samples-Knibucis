@@ -1,0 +1,751 @@
+@import url('../css/fonts.css');
+
+:root{
+
+    /*      Krāsas        */
+    --white: #ffffff;
+    --hover: #3d5c94;
+    --pink: #f7e8f4;
+    --gaisais: rgb(214, 227, 247);
+    --teksts: #111d4a;
+    --footer: #030718;
+
+
+    /*      fonti burtiem   */
+   
+    --Josefin: 'Josefin', sans-serif;
+    --Lexend: 'Lexend', sans-serif;
+   
+}
+
+body{
+    background-color: var(--white);
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------------------navigacija---------------------- */
+
+body{
+  background-color: var(--pink);
+}
+nav{
+  width: 100%;
+  height: 190px;
+  background-image: url(../img/fons.jpg);
+  background-size: cover;
+  display: grid;  
+}
+
+nav p img { 
+  padding-top: 35px; 
+  padding-left: 15%; 
+}
+
+nav ul{
+  float: left;
+  display: flex;
+}
+
+nav ul li{
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li a{
+  display: block;
+  font-family: var(--Lexend);
+  color: var(--white);
+  font-size: 20px;
+  margin: 20px;
+  padding: 10px;
+  text-decoration:none
+}
+
+nav ul li a:hover{
+  color:  #3d5c94;
+}
+
+nav ul li ul{
+  display: none;
+  position: absolute;  
+  background-color: var(--gaisais);
+  padding: 1px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+nav ul li:hover ul{
+  display: block;
+}
+
+nav ul li ul li{
+  width: 210px; 
+}
+
+nav ul li ul li a{
+  color: var(--white);
+  border-style: none;
+  border-radius: 0px;
+  margin: 3px;
+  padding: 10px;
+}
+
+nav ul li ul li a:hover{
+  background-color: var(--pink);
+}
+
+@media screen and (max-width: 600px){
+  nav ul{
+      display: grid;
+  }
+  nav{
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+  }
+  nav ul li a{
+    display: grid;
+    margin: 5px;
+    padding: 0; 
+    padding-left: 40%;   
+  }
+  nav p img { 
+    padding-top: 35px; 
+    padding-left: 40%; 
+  }
+  nav ul li ul li a{ 
+    display: none;
+  }
+}
+
+/* ---------------------sākums---------------------- */
+
+.kastes{
+  display: flex;
+  padding: 30px;
+  float: left;
+}
+
+.kastes_p{
+  margin: 35px;
+  text-align: center;
+  font-family: var(--Lexend);
+  font-size: 1rem;
+  color: var(--teksts);
+}
+.kastes_p img{
+  padding-bottom: 10px;
+}
+
+.box{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: animate 40s linear infinite;
+  margin-left: 43%;
+  margin-top: 10%;
+}
+
+@keyframes animate{
+  0%{
+    transform: perspective(1000px) rotateY(0deg) rotateX(15deg);
+  }
+  0%{
+    transform: perspective(1000px) rotateY(360deg) rotateX(15deg);
+  }
+}
+.box span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+}
+
+.box span img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px){
+  .kastes{
+    display: grid;
+    padding: 10px;
+    float: left;    
+  }
+  .box{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+    animation: animate 40s linear infinite;
+    margin-left: 43%;
+    margin-top: 25%;
+  }
+}
+
+/* ---------------------Produkti---------------------- */
+
+.produkti{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; 
+  height: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.produkti_s{
+  flex: 0 1 250px;
+  max-width: 250px;
+  height: 275px;
+  margin-left: 26px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.8);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.produkti_s img{
+  object-fit: cover;
+  object-position: center;
+}
+
+.produkti_nos{
+  height: 30%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--hover);
+  font-weight: 700;
+  font-size: 1rem; 
+  background: var(--pink);
+  cursor: pointer;
+}
+
+.produkti_nos a{
+  height: 30%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--hover);
+  font-weight: 700;
+  font-size: 1rem; 
+  background: var(--pink);
+  cursor: pointer;
+  text-decoration-line: underline;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.produkti_s::before, .produkti_s::after, .produkti_s img{
+  top: -50%;
+  width: 100%;
+  height: 200%;
+  display: block;
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+  /* z padarīja to ka sāka strādā tās strīpas pāri, pirms tam bija vnk 1 */
+}
+
+.produkti_s:hover{
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.2);
+  z-index: 99;
+  overflow: hidden;
+}
+
+.produkti_s::before{
+  content: '';
+  position: absolute;
+  opacity: 0.4;
+  width: 350px;
+  height: 70px;
+  background: var(--pink);
+  top: 50;
+  left: 0;
+  z-index: 1;
+  transform: rotate(45deg);
+  transition: transform 1.5s;
+}
+
+.produkti_s:hover::before{
+  transform: translate(-100px, 600%) rotate(45deg);
+  transition: transform 0.5s;
+}
+
+/* ---------------------------produktu sadaļas------------------- */
+
+.shuna img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.shunu-galerija {
+  margin-top: 50px;
+  max-width: 1080px;
+  display: grid;
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 11%;
+  padding-bottom: 11%;
+  margin: 0 auto; 
+  height: auto;
+}
+  
+.shuna {
+  display: flex;
+  position: relative;
+  width: 240px;
+  height: 265px;
+  background-color: var(--hover);  
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  cursor: pointer;
+}
+
+.shuna:hover{
+  opacity: 1;
+  transition: all 0.8s ease-in-out;
+  transform: scale(2);
+  z-index: 99;
+  overflow: hidden;
+}
+
+.shuna::before{
+  content: '';
+  position: absolute;
+  opacity: 0.4;
+  width: 350px;
+  height: 70px;
+  background: var(--pink);
+  top: 50;
+  left: 0;
+  z-index: 1;
+  transform: rotate(35deg);
+  transition: transform 1.5s;
+}
+
+.shuna:hover::before{
+  transform: translate(-100px, 600%) rotate(35deg);
+  transition: transform 0.9s;
+}
+
+.shuna:first-child {
+  grid-row-start: 1;
+  grid-column: 2 / span 2;
+}
+
+.shuna:nth-child(2) {
+  grid-row-start: 1;
+  grid-column: 4 / span 2;
+}
+
+.shuna:nth-child(3) {
+  grid-row-start: 1;
+  grid-column: 6 / span 2;
+}
+
+.shuna:nth-child(4) {
+  grid-row-start: 1;
+  grid-column: 8/ span 2;
+}
+
+.shuna:nth-child(5) {
+  grid-row-start: 2;
+  grid-column: 1 / span 2;
+}
+
+.shuna:nth-child(6) {
+  grid-row-start: 2;
+  grid-column: 3 / span 2;
+}
+
+.shuna:nth-child(7) {
+  grid-row-start: 2;
+  grid-column: 5 / span 2;
+}
+
+.shuna:nth-child(8) {
+  grid-row-start: 2;
+  grid-column: 7 / span 2;
+}
+
+.shuna:nth-child(9) {
+  grid-row-start: 3;
+  grid-column: 2 / span 2;
+}
+
+.shuna:nth-child(10) {
+  grid-row-start: 3;
+  grid-column: 4 / span 2;
+}
+
+.shuna:nth-child(11) {
+  grid-row-start: 3;
+  grid-column: 6/ span 2;
+}
+
+.shuna:nth-child(12) {
+  grid-row-start: 3;
+  grid-column: 8/ span 2;
+}
+
+.shuna:nth-child(13) {
+  grid-row-start: 2;
+  grid-column: 9/ span 2;
+}
+
+@media screen and (max-width: 1280px){
+  .shuna:first-child {
+    grid-row-start: 1;
+    grid-column: 2 / span 2;
+  }
+  
+  .shuna:nth-child(2) {
+    grid-row-start: 2;
+    grid-column: 3 / span 2;
+  }
+  
+  .shuna:nth-child(3) {
+    grid-row-start: 3;
+    grid-column: 2 / span 2;
+  }
+
+  .shuna:nth-child(4) {
+    grid-row-start: 4;
+    grid-column: 3/ span 2;
+  }
+
+  .shuna:nth-child(5) {
+    grid-row-start: 5;
+    grid-column: 2 / span 2;
+  }
+  
+  .shuna:nth-child(6) {
+    grid-row-start: 6;
+    grid-column: 3 / span 2;
+  }
+  
+  .shuna:nth-child(7) {
+    grid-row-start: 7;
+    grid-column: 2 / span 2;
+  }
+  
+  .shuna:nth-child(8) {
+    grid-row-start: 8;
+    grid-column: 3 / span 2;
+  }
+  
+  .shuna:nth-child(9) {
+    grid-row-start: 9;
+    grid-column: 2 / span 2;
+  }
+  
+  .shuna:nth-child(10) {
+    grid-row-start: 10;
+    grid-column: 3 / span 2;
+  }
+  
+  .shuna:nth-child(11) {
+    grid-row-start: 11;
+    grid-column: 2/ span 2;
+  }
+
+  .shuna:nth-child(12) {
+    grid-row-start: 12;
+    grid-column: 3/ span 2;
+  }
+
+  .shuna:nth-child(13) {
+    grid-row-start: 13;
+    grid-column: 2/ span 2;
+  }
+  
+  .shuna {
+    width: 200px;
+    height: 225px;
+    background-color: var(--hover);  
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    cursor: pointer;
+  }
+}
+
+/* ----------------------par----------------------- */
+
+.vidus{
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.kreisa{
+  position: absolute;
+  top: 78%;
+  left: 20%;
+  transform: translate(-50%,-50%);
+}
+
+.laba{
+  position: absolute;
+  top: 78%;
+  left: 80%;
+  transform: translate(-50%,-50%);
+}
+
+.kartina{
+  cursor: pointer;
+  width: 340px;
+  height: 480px;
+}
+
+.front,.back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+}
+
+.front img{
+  height: 100%;
+}
+
+.front{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.back{
+  background: var(--pink);
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.aizmugure-teksts{
+  color: var(--teksts);
+  font-family: var(--Lexend);
+  text-align: center;
+  width: 100%;
+}
+
+.kartina:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.kartina:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.soctikli2 i{
+  color: var(--footer);
+  text-decoration: none;
+  margin-top: 15px;
+  margin-right: 15px;
+  font-size: 30px;
+}
+
+.soctikli2 i:hover{
+  color:#3d5c94;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px){
+  .aizmugure-teksts{
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .soctikli2 i{
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 10px;
+  }
+
+  .kartina{
+    cursor: pointer;
+    width: 180px;
+    height: 210px;
+  }
+
+  .vidus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .kreisa{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .laba{
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+@media screen and (max-width: 600px){
+  .aizmugure-teksts{
+    width: 100%;
+    font-size: 10px;
+  }
+  .soctikli2 i{
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 10px;
+  }
+  .kartina{
+    cursor: pointer;
+    width: 180px;
+    height: 210px;
+  }
+  .vidus{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .kreisa{
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .laba{
+    position: absolute;
+    top: 145%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+/* ---------------------kontakti---------------------- */
+
+.k_h{
+  padding: 30px;
+  color: var(--teksts);
+  font-family: var(--Lexend);
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 770px){
+  .k_h{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+}
+
+.kont{
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width:1230px) {
+  .kont{
+    display: grid;
+    align-items: center;
+  }
+}
+
+.kont_p{
+  text-align: center;
+  color: var(--teksts);
+  font-family: var(--Lexend);
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width:700px) {
+  .kont_p{
+    text-align: left;
+    font-size: 0.7rem;
+  }
+}
+
+.karte{
+  padding-left: 15%;
+  padding-right: 5%;
+  width: 500px;
+  height: 350px;
+}
+
+@media screen and (max-width:600px) {
+  .karte{
+    padding-left: 0%;
+    padding-right: 2%;
+  }
+}
+
+/* ---------------------Kājene---------------------- */
+
+.kajene_bloks{ 
+    height: 100%;   
+    color: var(--white);
+    text-align: center;
+    display: flex;   
+    font-family: var(--Lexend);
+    padding: 25px 45% 35px 45%;
+    background: var(--footer);
+}
+
+.seko_kajene p{
+  color: var(--white);
+  text-decoration: none;  
+  font-family: var(--Lexend);
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
+.seko_kajene h2{
+  color: var(--white);
+  text-decoration: none;  
+  font-family: var(--Lexend);  
+  font-size: 1rem;
+}
+
+.soctikli i{
+    color: var(--pink);
+    text-decoration: none;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.soctikli i:hover{
+    color:#3d5c94;
+    text-decoration: none;
+}
+
